@@ -1,0 +1,15 @@
+[tools]
+node = "25"
+pnpm = "latest"
+
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
+
+[tasks.dev]
+run = '''pnpm run --filter "@minies/${usage_app}" dev'''
+usage = '''
+arg "[app]" default="home" {
+  choices "common" "home"
+}
+'''
+description = "Run the dev server for the selected app, home by default."

@@ -1,0 +1,40 @@
+{
+	"devDependencies": {
+		"@lucide/svelte": "catalog:",
+		"@sveltejs/adapter-auto": "catalog:",
+		"@sveltejs/kit": "catalog:",
+		"@sveltejs/vite-plugin-svelte": "catalog:",
+		"@tailwindcss/forms": "catalog:",
+		"@tailwindcss/typography": "catalog:",
+		"@tailwindcss/vite": "catalog:",
+		"daisyui": "catalog:",
+		"svelte": "catalog:",
+		"svelte-check": "catalog:",
+		"tailwindcss": "catalog:",
+		"vite": "catalog:"
+	},
+	"exports": {
+		"./components": {
+			"svelte": "./src/lib/components/index.ts",
+			"types": "./src/lib/components/index.ts",
+			"default": "./src/lib/components/index.ts"
+		},
+		"./styles.css": "./src/lib/styles.css"
+	},
+	"name": "@minies/common",
+	"peerDependencies": {
+		"@sveltejs/kit": "catalog:",
+		"svelte": "catalog:"
+	},
+	"private": true,
+	"scripts": {
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"dev": "vite dev",
+		"prepare": "svelte-kit sync || echo ''",
+		"preview": "vite preview",
+		"tsc": "tsc"
+	},
+	"type": "module",
+	"version": "0.0.0"
+}
