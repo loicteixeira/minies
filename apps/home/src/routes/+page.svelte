@@ -8,31 +8,21 @@
 </script>
 
 <main class="container mx-auto flex max-w-3xl flex-col gap-7 p-8">
-	<div class="bg-base-200 border-base-300 rounded-2xl border p-6">
-		<p class="text-base-content leading-relaxed">
+	<div class="bg-base-200 border-base-300 flex flex-col gap-4 rounded-2xl border p-6">
+		<p>
 			A growing collection of small, focused tools built to make everyday tasks a little less
 			painful.
-			<a
-				href="https://github.com/loicteixeira/minies"
-				rel="external"
-				class="text-primary hover:underline"
-			>
+			<a href="https://github.com/loicteixeira/minies" rel="external" class="link link-primary">
 				Open source
 			</a> and free.
 		</p>
+		<p>If you find these tools useful, please consider sharing them with others.</p>
 	</div>
 
 	<div class="bg-base-200 border-base-300 overflow-hidden rounded-2xl border">
 		{#each data.projects as project (project.name)}
 			{@render project_link(project)}
 		{/each}
-	</div>
-
-	<div class="bg-base-200 border-base-300 rounded-2xl border p-6">
-		<h3 class="text-lg font-semibold">Support the Project</h3>
-		<p class="text-base-content/60 mt-1 text-sm">
-			If you find these tools useful, please consider sharing them with others.
-		</p>
 	</div>
 </main>
 
