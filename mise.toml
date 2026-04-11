@@ -9,7 +9,7 @@ _.path = ['{{config_root}}/node_modules/.bin']
 run = '''pnpm run --filter "@minies/${usage_app}" dev'''
 usage = '''
 arg "[app]" default="home" {
-  choices "common" "home"
+  choices "common" "home" "retail-calculators"
 }
 '''
 description = "Run the dev server for the selected app, home by default."

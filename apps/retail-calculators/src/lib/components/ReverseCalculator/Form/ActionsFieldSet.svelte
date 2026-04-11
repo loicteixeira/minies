@@ -1,0 +1,16 @@
+<script lang="ts">
+	import FieldSet from '../../Atoms/FieldSet.svelte';
+
+	type Props = {
+		onClearData: () => void;
+		onLoadDemoData: () => void;
+	};
+	let { onClearData, onLoadDemoData }: Props = $props();
+</script>
+
+<FieldSet class="flex flex-row" title="Actions">
+	<div class="flex flex-col gap-2">
+		<button class="btn btn-ghost" onclick={onLoadDemoData}>Load Demo Data</button>
+		<button class="btn btn-error btn-ghost" onclick={onClearData}>Clear Calculator</button>
+	</div>
+</FieldSet>

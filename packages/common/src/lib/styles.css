@@ -6,4 +6,18 @@
 		lemonade --default,
 		dim --prefersdark;
 }
+
+/* Parse CSS from @minies/common even when processed by each individual apps */
 @source './**/*.svelte';
+
+/* Have tailwind `dark:` selector work with the custom themes */
+@custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
+
+/* Custom CSS */
+html {
+	scrollbar-gutter: stable;
+}
+
+.surface {
+	@apply bg-base-200 border-base-300 flex flex-col gap-4 rounded-2xl border p-6;
+}
