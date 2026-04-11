@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { type LucideProps } from '@lucide/svelte';
-	import type { Component } from 'svelte';
+	import type { Component, Snippet } from 'svelte';
 
 	import { resolve } from '$app/paths';
 
@@ -11,13 +11,14 @@
 		appName: string;
 		appSubtitle?: string;
 		appIcon: Component<LucideProps>;
+		menuItems?: Snippet;
 	};
-	const { appName, appSubtitle, appIcon: AppIcon }: Props = $props();
+	const { appName, appSubtitle, appIcon: AppIcon, menuItems }: Props = $props();
 </script>
 
 <ThemeInitScript />
 
-<header class="border-base-100 border-b">
+<header class="border-base-100 mb-8 border-b">
 	<nav class="navbar px-5">
 		<div class="navbar-start">
 			<h1 class="flex items-center gap-2">
@@ -38,6 +39,11 @@
 				</a>
 			</h1>
 		</div>
+		{#if menuItems}
+			<div class="navbar-center flex gap-4">
+				{@render menuItems()}
+			</div>
+		{/if}
 		<div class="navbar-end">
 			<ThemeSwitcher />
 		</div>
