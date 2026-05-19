@@ -5,19 +5,23 @@
 	import { ATTRIBUTE_KEY, handleThemeChange, LIGHT_THEME } from './constants.ts';
 
 	let isLight = $state(false);
+	let tooltipText = $derived(
+		isLight
+			? 'Light theme on. Click to switch to dark theme.'
+			: 'Dark theme on. Click to switch to light theme.',
+	);
 
 	onMount(() => {
-		// TODO: Move too?
 		isLight = document.documentElement.getAttribute(ATTRIBUTE_KEY) === LIGHT_THEME;
 	});
 </script>
 
-<label class="swap swap-rotate hover:text-primary">
+<label class="swap swap-rotate hover:text-primary" title={tooltipText}>
 	<input
 		type="checkbox"
 		class="sr-only"
 		value="lemonade"
-		checked={isLight}
+		bind:checked={isLight}
 		onchange={handleThemeChange}
 	/>
 
