@@ -26,7 +26,7 @@
 <FieldSet class=" {extraClass}" title="Bundle Options">
 	<table class="mr-auto table-fixed">
 		<thead>
-			<tr class="text-neutral-content/70 text-left align-text-top uppercase">
+			<tr class="text-left align-text-top uppercase">
 				<th class="w-3/6 px-2" id="bundle-name">Name</th>
 				<th class="w-1/6 px-2 leading-none" id="bundle-buy-count">
 					Buy<br />
@@ -77,7 +77,7 @@
 					<td class="px-2 py-1.5">
 						<select
 							aria-labelledby="bundle-rounding"
-							class="select focus:ring-opacity-50 focus:ring-primary mt-1 block w-20 rounded focus:border-teal-700 focus:ring"
+							class="select mt-1 block w-20 rounded"
 							id="bundle-{bundle.key}-rounding"
 							bind:value={bundle.rounding}
 						>

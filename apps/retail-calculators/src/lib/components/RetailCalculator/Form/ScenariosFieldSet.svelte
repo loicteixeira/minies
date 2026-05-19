@@ -42,7 +42,7 @@
 <FieldSet class=" {extraClass}" title="Scenarios">
 	<table class="mr-auto table-fixed">
 		<thead>
-			<tr class="text-neutral-content/70 text-left align-text-top uppercase">
+			<tr class="text-left align-text-top uppercase">
 				<th class="w-3/5 px-2" id="scenario-name">Name</th>
 				<th colspan="2" class="w-2/5 px-2 leading-none" id="scenario-listing-price">
 					Listing Price

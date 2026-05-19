@@ -26,7 +26,7 @@
 <FieldSet class=" {extraClass}" title="Fees">
 	<table class="mr-auto table-fixed">
 		<thead>
-			<tr class="text-neutral-content/70 h-[2.3rem] text-left align-text-top uppercase">
+			<tr class="h-[2.3rem] text-left align-text-top uppercase">
 				<th class="w-3/5 px-2" id="fee-name">Name</th>
 				<th class="w-1/5 px-2" id="fee-amount">Amount</th>
 				<th class="w-1/5 px-2" colspan="2" id="fee-type">Type</th>
@@ -57,7 +57,7 @@
 					<td class="px-2 py-1.5">
 						<select
 							aria-labelledby="fee-type"
-							class="select focus:ring-opacity-50 focus:ring-primary mt-1 block rounded focus:border-teal-700 focus:ring"
+							class="select mt-1 block min-w-[9ch] rounded"
 							id="fee-{fee.key}-type"
 							bind:value={fee.type}
 						>

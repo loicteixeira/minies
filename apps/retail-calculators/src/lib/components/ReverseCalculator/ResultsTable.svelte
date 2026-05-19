@@ -14,7 +14,7 @@
 <div class="overflow-x-auto rounded border border-gray-300">
 	<table class="table-auto border-inherit">
 		<thead
-			class="text-md text-neutral-content/70 bg-base-200 border-inherit text-center align-text-top tracking-wide uppercase"
+			class="text-md bg-base-200 border-inherit text-center align-text-top tracking-wide uppercase"
 		>
 			<tr class="border-inherit">
 				{#each columns as column}
