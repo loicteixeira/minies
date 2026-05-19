@@ -12,7 +12,7 @@
 	<label class="block">
 		Currency
 		<select class="select mt-1 block w-32 rounded" id="currency-code" bind:value={currencyCode}>
-			{#each CURRENCY_CODES as currency}
+			{#each CURRENCY_CODES as currency (currency)}
 				<option value={currency}>{currency}</option>
 			{/each}
 		</select>

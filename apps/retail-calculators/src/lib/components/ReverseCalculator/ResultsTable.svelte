@@ -17,7 +17,7 @@
 			class="text-md bg-base-200 border-inherit text-center align-text-top tracking-wide uppercase"
 		>
 			<tr class="border-inherit">
-				{#each columns as column}
+				{#each columns as column (column.id)}
 					<th
 						class={[
 							'border-inherit px-4 py-3 [&:not(:last-child)]:border-e',
@@ -31,19 +31,19 @@
 				{/each}
 			</tr>
 			<tr class="border-inherit">
-				{#each columns as column}
+				{#each columns as column (`sub-${column.id}`)}
 					{#if column.children}
-						{#each column.children as child}
-							<th class="border border-inherit px-4 py-3">{child.label}</th>
+						{#each column.children as subColumn, subColumnIdx (`sub-${column.id}-${subColumnIdx}`)}
+							<th class="border border-inherit px-4 py-3">{subColumn.label}</th>
 						{/each}
 					{/if}
 				{/each}
 			</tr>
 		</thead>
 		<tbody class="border-inherit">
-			{#each rows as row}
+			{#each rows as row, rowIndex (rowIndex)}
 				<tr class="border-b border-inherit">
-					{#each row as { extra, type, value, warning }, cellIndex}
+					{#each row as { extra, type, value, warning }, cellIndex (`${rowIndex}-${cellIndex}`)}
 						<ResultsCell
 							{extra}
 							{type}
