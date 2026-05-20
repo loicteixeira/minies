@@ -18,16 +18,16 @@
 					buyCount: 1,
 					freeCount: 0,
 					name: 'Single',
-					rounding: null
+					rounding: null,
 				},
-				...form.state.bundles
+				...form.state.bundles,
 			],
 			productInformation: {
 				orderCount: form.state.orderCount || 0,
-				unitCost: form.state.unitCost || 0
+				unitCost: form.state.unitCost || 0,
 			},
-			scenarios: form.state.scenarios
-		})
+			scenarios: form.state.scenarios,
+		}),
 	);
 </script>
 
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 
-			<div class="grid-warp grid grid-cols-[repeat(auto-fit,_minmax(150px,auto))] gap-6">
+			<div class="grid-warp grid grid-cols-[repeat(auto-fit,minmax(150px,auto))] gap-6">
 				<RetailForm.ScenariosFieldSet
 					class="col-span-2"
 					currencyCode={form.state.currencyCode}
