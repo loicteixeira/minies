@@ -40,13 +40,11 @@
 </script>
 
 <FieldSet class=" {extraClass}" title="Scenarios">
-	<table class="mr-auto table-fixed">
+	<table class="w-full table-auto">
 		<thead>
 			<tr class="text-left align-text-top uppercase">
-				<th class="w-3/5 px-2" id="scenario-name">Name</th>
-				<th colspan="2" class="w-2/5 px-2 leading-none" id="scenario-listing-price">
-					Listing Price
-				</th>
+				<th class="px-2" id="scenario-name">Name</th>
+				<th colspan="2" class="px-2 leading-none" id="scenario-listing-price"> Listing Price </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -62,7 +60,7 @@
 						/>
 					</td>
 					<td class="px-2 py-1.5">
-						<div class="input w-32">
+						<div class="input w-[10ch]">
 							<input
 								aria-labelledby="scenario-listing-price"
 								class="px-0 focus:ring-0"

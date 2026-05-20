@@ -24,12 +24,12 @@
 </script>
 
 <FieldSet class=" {extraClass}" title="Fees">
-	<table class="mr-auto table-fixed">
+	<table class="w-full table-auto">
 		<thead>
 			<tr class="h-[2.3rem] text-left align-text-top uppercase">
-				<th class="w-3/5 px-2" id="fee-name">Name</th>
-				<th class="w-1/5 px-2" id="fee-amount">Amount</th>
-				<th class="w-1/5 px-2" colspan="2" id="fee-type">Type</th>
+				<th class="px-2" id="fee-name">Name</th>
+				<th class="px-2" id="fee-amount">Amount</th>
+				<th class="px-2" colspan="2" id="fee-type">Type</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,7 +38,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="fee-name"
-							class="input focus:ring-0"
+							class="input w-full focus:ring-0"
 							id="fee-{fee.key}-name"
 							type="text"
 							bind:value={fee.name}
@@ -47,7 +47,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="fee-amount"
-							class="input focus:ring-0"
+							class="input w-[9ch] focus:ring-0"
 							id="fee-{fee.key}-amount"
 							type="text"
 							inputmode="numeric"
@@ -57,7 +57,7 @@
 					<td class="px-2 py-1.5">
 						<select
 							aria-labelledby="fee-type"
-							class="select mt-1 block min-w-[9ch] rounded"
+							class="select mt-1 block w-[9ch] rounded"
 							id="fee-{fee.key}-type"
 							bind:value={fee.type}
 						>
@@ -67,7 +67,7 @@
 					</td>
 					<td class="py-1.5">
 						<button
-							class="btn btn-ghost"
+							class="btn btn-ghost btn-sm"
 							title="Delete fee #{index + 1} ({fee.name})"
 							onclick={() => removeFee(index)}
 						>
