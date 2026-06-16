@@ -2,7 +2,7 @@
 	"devDependencies": {
 		"@lucide/svelte": "catalog:",
 		"@minies/common": "workspace:*",
-		"@sveltejs/adapter-auto": "catalog:",
+		"@sveltejs/adapter-cloudflare": "catalog:",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@tailwindcss/forms": "catalog:",
@@ -13,7 +13,8 @@
 		"svelte": "catalog:",
 		"svelte-check": "catalog:",
 		"tailwindcss": "catalog:",
-		"vite": "catalog:"
+		"vite": "catalog:",
+		"wrangler": "catalog:"
 	},
 	"name": "@minies/retail-calculators",
 	"private": true,
@@ -21,6 +22,8 @@
 		"build": "vite build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"deploy": "pnpm build && wrangler deploy:push",
+		"deploy:push": "wrangler deploy",
 		"dev": "vite dev",
 		"prepare": "svelte-kit sync || echo ''",
 		"preview": "vite preview"
