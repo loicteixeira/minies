@@ -281,7 +281,7 @@
 				foreground={{ file: foregroundImageFile, options: defaultForegroundOptions }}
 				generalOptions={generalOptions.value}
 				watermark={{ file: watermarkImageFile, options: { ...watermarkOptions.value } }}
-				class="zoom-half"
+				scale={1 / 2}
 				caption="Original artwork with background fill"
 				bind:this={mainCanvasRef}
 			/>
@@ -294,7 +294,7 @@
 				}}
 				generalOptions={generalOptions.value}
 				watermark={{ file: watermarkImageFile, options: { ...watermarkOptions.value } }}
-				class="zoom-sixth"
+				scale={1 / 6}
 				caption="Zoom-in crop of one side"
 				bind:this={detailStartCanvasRef}
 			/>
@@ -305,7 +305,7 @@
 				}}
 				generalOptions={generalOptions.value}
 				watermark={{ file: watermarkImageFile, options: { ...watermarkOptions.value } }}
-				class="zoom-sixth"
+				scale={1 / 6}
 				caption="Zoom-in crop of center"
 				bind:this={detailCenterCanvasRef}
 			/>
@@ -316,7 +316,7 @@
 				}}
 				generalOptions={generalOptions.value}
 				watermark={{ file: watermarkImageFile, options: { ...watermarkOptions.value } }}
-				class="zoom-sixth"
+				scale={1 / 6}
 				caption="Zoom-in crop of other side"
 				bind:this={detailEndCanvasRef}
 			/>
@@ -335,13 +335,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	:global(.zoom-half) {
-		zoom: 0.5;
-	}
-
-	:global(.zoom-sixth) {
-		zoom: 0.16667;
-	}
-</style>

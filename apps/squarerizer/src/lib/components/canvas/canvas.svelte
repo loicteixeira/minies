@@ -19,21 +19,21 @@
 	type Props = {
 		background?: { file: File | null; options: BackgroundOptions };
 		caption?: string;
-		class?: string;
 		foreground: {
 			file: File | null;
 			options: Omit<ForegroundOptions, 'rotationInDegrees'> & { allowRotation?: boolean };
 		};
 		generalOptions: GeneralOptions;
+		scale: number;
 		watermark?: { file: File | null; options: WatermarkOptions };
 	};
 
 	let {
 		background = { file: null, options: defaultBackgroundOptions },
 		caption,
-		class: klass,
 		foreground = { file: null, options: { ...defaultForegroundOptions, allowRotation: false } },
 		generalOptions,
+		scale,
 		watermark = { file: null, options: defaultWatermarkOptions },
 	}: Props = $props();
 
@@ -61,21 +61,23 @@
 	{#if caption}
 		<p class="text-base-content/60 text-center text-sm">{caption}</p>
 	{/if}
-	<canvas
-		bind:this={canvasRef}
-		{@attach createCanvas({
-			background: background.file,
-			backgroundOptions: background.options,
-			foreground: foreground.file,
-			foregroundOptions: { ...foreground.options, rotationInDegrees: rotationInDegrees },
-			size,
-			watermark: watermark.file,
-			watermarkOptions: watermark.options,
-		})}
-		width={size.width}
-		height={size.height}
-		class={klass}
-	></canvas>
+	<div style="width: {size.width * scale}px; height: {size.height * scale}px; overflow: hidden;">
+		<canvas
+			bind:this={canvasRef}
+			{@attach createCanvas({
+				background: background.file,
+				backgroundOptions: background.options,
+				foreground: foreground.file,
+				foregroundOptions: { ...foreground.options, rotationInDegrees: rotationInDegrees },
+				size,
+				watermark: watermark.file,
+				watermarkOptions: watermark.options,
+			})}
+			width={size.width}
+			height={size.height}
+			style="transform: scale({scale}); transform-origin: top left;"
+		></canvas>
+	</div>
 
 	{#if foreground.options.allowRotation}
 		<div class="flex gap-4">
