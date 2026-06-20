@@ -13,3 +13,12 @@ arg "<app>" {
 }
 '''
 description = "Run the dev server for the selected app."
+
+[tasks.publish]
+run = '''pnpm run --filter "@minies/${usage_app}" publish'''
+usage = '''
+arg "<app>" {
+  choices "home" "retail-calculators" "squarerizer"
+}
+'''
+description = "Build and publish the selected app."
