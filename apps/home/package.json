@@ -2,7 +2,7 @@
 	"devDependencies": {
 		"@lucide/svelte": "catalog:",
 		"@minies/common": "workspace:*",
-		"@sveltejs/adapter-auto": "catalog:",
+		"@sveltejs/adapter-cloudflare": "catalog:",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@tailwindcss/forms": "catalog:",

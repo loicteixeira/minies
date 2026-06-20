@@ -1,0 +1,8 @@
+name = "minies-home"
+compatibility_date = "2026-06-16"
+compatibility_flags = ["nodejs_compat"]
+
+assets = { directory = ".svelte-kit/cloudflare" }
+preview_urls = false
+routes = [{ pattern = "minies.perfectdodge.com", custom_domain = true }]
+workers_dev = false

@@ -16,7 +16,7 @@ export function load() {
 				description: 'Calculate margins, markups, and break-even points.',
 				name: 'Retail Calculators',
 				icon: Calculator,
-				url: 'https://retailcalculators.minies.perfectdodge.com',
+				url: 'https://retail-calculators.minies.perfectdodge.com',
 			},
 			{
 				description:
