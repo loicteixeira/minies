@@ -19,14 +19,14 @@
 <ThemeInitScript />
 
 <header class="border-base-100 mb-8 border-b">
-	<nav class="navbar px-5">
-		<div class="navbar-start">
-			<h1 class="flex items-center gap-2">
-				<span
-					class="bg-primary/10 text-primary inline-flex aspect-square items-center justify-center rounded-lg p-2"
-				>
-					<AppIcon />
-				</span>
+	<nav class="navbar flex-col justify-between gap-4 px-5 md:flex-row">
+		<div class="navbar-start w-auto gap-2">
+			<span
+				class="bg-primary/10 text-primary inline-flex aspect-square items-center justify-center rounded-lg p-2"
+			>
+				<AppIcon />
+			</span>
+			<h1>
 				<a
 					href={resolve('/')}
 					title="Home"
@@ -39,13 +39,11 @@
 				</a>
 			</h1>
 		</div>
-		{#if menuItems}
-			<div class="navbar-center flex gap-4">
+		<div class="navbar-end w-auto justify-center gap-4 md:justify-end">
+			{#if menuItems}
 				{@render menuItems()}
-			</div>
-		{/if}
-		<div class="navbar-end">
-			<ThemeSwitcher />
+			{/if}
+			<ThemeSwitcher class={`${menuItems && 'ps-4'}`} />
 		</div>
 	</nav>
 </header>

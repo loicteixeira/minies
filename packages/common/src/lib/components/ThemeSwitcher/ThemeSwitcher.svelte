@@ -11,12 +11,14 @@
 			: 'Dark theme on. Click to switch to light theme.',
 	);
 
+	let { class: extraClasses }: { class?: string } = $props();
+
 	onMount(() => {
 		isLight = document.documentElement.getAttribute(ATTRIBUTE_KEY) === LIGHT_THEME;
 	});
 </script>
 
-<label class="swap swap-rotate hover:text-primary" title={tooltipText}>
+<label class={['swap swap-rotate hover:text-primary', extraClasses]} title={tooltipText}>
 	<input
 		type="checkbox"
 		class="sr-only"

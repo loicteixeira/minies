@@ -15,7 +15,7 @@
 	/>
 </svelte:head>
 
-<main class="container mx-auto flex max-w-3xl flex-col gap-7">
+<main class="container mx-auto mb-8 flex max-w-3xl flex-col gap-7 px-4 sm:px-6 lg:px-8">
 	<div class="bg-base-200 border-base-300 flex flex-col gap-4 rounded-2xl border p-6">
 		<p>
 			A collection of small, focused tools built to make everyday tasks a little less painful.
