@@ -43,7 +43,9 @@
 			{#if menuItems}
 				{@render menuItems()}
 			{/if}
-			<ThemeSwitcher class={`${menuItems && 'ps-4'}`} />
+			<div class={[menuItems && 'ps-4']}>
+				<ThemeSwitcher />
+			</div>
 		</div>
 	</nav>
 </header>
