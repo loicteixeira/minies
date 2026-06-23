@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { type LucideProps } from '@lucide/svelte';
+	import { History } from '@lucide/svelte';
 	import type { Component, Snippet } from 'svelte';
 
 	import { resolve } from '$app/paths';
@@ -12,8 +13,15 @@
 		appSubtitle?: string;
 		appIcon: Component<LucideProps>;
 		menuItems?: Snippet;
+		showChangelog?: boolean;
 	};
-	const { appName, appSubtitle, appIcon: AppIcon, menuItems }: Props = $props();
+	const {
+		appName,
+		appSubtitle,
+		appIcon: AppIcon,
+		menuItems,
+		showChangelog = true,
+	}: Props = $props();
 </script>
 
 <ThemeInitScript />
@@ -43,7 +51,14 @@
 			{#if menuItems}
 				{@render menuItems()}
 			{/if}
-			<div class={[menuItems && 'ps-4']}>
+			<div class="inline-flex gap-8 ps-4">
+				{#if showChangelog}
+					<a
+						class="hover:text-primary tooltip tooltip-bottom"
+						data-tip="Changelog"
+						href="/changelog"><History size="18" /></a
+					>
+				{/if}
 				<ThemeSwitcher />
 			</div>
 		</div>

@@ -13,6 +13,11 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<SiteHeader appIcon={PencilRuler} appName="Minies" appSubtitle="Utilities for everyday tasks" />
+<SiteHeader
+	appIcon={PencilRuler}
+	appName="Minies"
+	appSubtitle="Utilities for everyday tasks"
+	showChangelog={false}
+/>
 
 {@render children()}
