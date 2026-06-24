@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { FAQ } from '@minies/common/components';
+
 	import { resolve } from '$app/paths';
 </script>
 
@@ -25,19 +27,5 @@
 		</ul>
 	</div>
 
-	<div class="prose mx-auto">
-		<p><strong>Is my data safe?</strong></p>
-
-		<p>
-			The values you enter in the calculator are never uploaded to any server;<br />Your personal
-			data is never collected or used in any way while using this calculator.<br />You don’t need to
-			create an account or log in to use it.
-		</p>
-
-		<p>
-			However, the data is saved in your browser's local storage so you won't have to set everything
-			up again the next time you use the calculator. If you wish to delete the data, either click
-			the "Clear Calculator" action or clear your browser storage.
-		</p>
-	</div>
+	<FAQ />
 </div>
