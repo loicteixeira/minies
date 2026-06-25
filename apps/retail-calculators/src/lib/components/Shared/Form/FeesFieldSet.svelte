@@ -1,13 +1,10 @@
 <script lang="ts">
-	import type { HTMLFieldsetAttributes } from 'svelte/elements';
-
 	import type { RetailFormState } from '$lib/types';
 
 	import FieldSet from '../../Atoms/FieldSet.svelte';
 
-	type Props = Pick<RetailFormState, 'fees'> &
-		Pick<HTMLFieldsetAttributes, 'class'> & { currencySymbol: string };
-	let { currencySymbol, fees = $bindable(), class: extraClass }: Props = $props();
+	type Props = Pick<RetailFormState, 'fees'> & { currencySymbol: string };
+	let { currencySymbol, fees = $bindable() }: Props = $props();
 
 	function addFee() {
 		fees.push({
@@ -23,7 +20,7 @@
 	}
 </script>
 
-<FieldSet class=" {extraClass}" title="Fees">
+<FieldSet title="Fees">
 	<table class="w-full table-auto">
 		<thead>
 			<tr class="h-[2.3rem] text-left align-text-top uppercase">
@@ -38,7 +35,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="fee-name"
-							class="input w-full focus:ring-0"
+							class="input w-[20ch]"
 							id="fee-{fee.key}-name"
 							type="text"
 							bind:value={fee.name}
@@ -47,7 +44,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="fee-amount"
-							class="input w-[9ch] focus:ring-0"
+							class="input w-[9ch]"
 							id="fee-{fee.key}-amount"
 							type="text"
 							inputmode="numeric"

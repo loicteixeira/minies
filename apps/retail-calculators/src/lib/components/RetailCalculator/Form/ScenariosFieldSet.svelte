@@ -1,22 +1,13 @@
 <script lang="ts">
-	import type { HTMLFieldsetAttributes } from 'svelte/elements';
-
 	import { formatCurrency } from '$lib/i18n';
 	import type { RetailFormState } from '$lib/types';
 
 	import FieldSet from '../../Atoms/FieldSet.svelte';
 
-	type Props = Pick<RetailFormState, 'currencyCode' | 'unitCost' | 'scenarios'> &
-		Pick<HTMLFieldsetAttributes, 'class'> & {
-			currencySymbol: string;
-		};
-	let {
-		currencyCode,
-		currencySymbol,
-		class: extraClass,
-		unitCost = 1,
-		scenarios = $bindable(),
-	}: Props = $props();
+	type Props = Pick<RetailFormState, 'currencyCode' | 'unitCost' | 'scenarios'> & {
+		currencySymbol: string;
+	};
+	let { currencyCode, currencySymbol, unitCost = 1, scenarios = $bindable() }: Props = $props();
 
 	const suggestedWholesale = $derived(Math.round((unitCost ?? 0) * 3));
 	const suggestedRetail = $derived(Math.round((unitCost ?? 0) * 6));
@@ -39,7 +30,7 @@
 	}
 </script>
 
-<FieldSet class=" {extraClass}" title="Scenarios">
+<FieldSet title="Scenarios">
 	<table class="w-full table-auto">
 		<thead>
 			<tr class="text-left align-text-top uppercase">
@@ -53,7 +44,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="scenario-name"
-							class="input"
+							class="input w-[12ch]"
 							id="scenario-{scenario.key}-name"
 							type="text"
 							bind:value={scenario.name}
@@ -74,7 +65,7 @@
 					</td>
 					<td class="py-1.5">
 						<button
-							class="btn btn-ghost"
+							class="btn btn-ghost btn-sm"
 							title="Delete scenario '{scenario.name}'"
 							onclick={() => removeScenario(index)}
 						>

@@ -59,16 +59,15 @@
 				</div>
 			</div>
 
-			<div class="grid-warp grid grid-cols-[repeat(auto-fit,minmax(150px,auto))] gap-6">
+			<div class="flex flex-wrap gap-6">
 				<RetailForm.ScenariosFieldSet
-					class="col-span-2"
 					currencyCode={form.state.currencyCode}
 					{currencySymbol}
 					unitCost={form.state.unitCost}
 					bind:scenarios={form.state.scenarios}
 				/>
-				<RetailForm.BundleOptionsFieldSet class="col-span-3" bind:bundles={form.state.bundles} />
-				<RetailForm.FeesFieldSet class="col-span-3" {currencySymbol} bind:fees={form.state.fees} />
+				<RetailForm.BundleOptionsFieldSet bind:bundles={form.state.bundles} />
+				<RetailForm.FeesFieldSet {currencySymbol} bind:fees={form.state.fees} />
 			</div>
 		</form>
 

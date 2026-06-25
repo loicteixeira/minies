@@ -1,12 +1,10 @@
 <script lang="ts">
-	import type { HTMLFieldsetAttributes } from 'svelte/elements';
-
 	import type { RetailFormState } from '$lib/types';
 
 	import FieldSet from '../../Atoms/FieldSet.svelte';
 
-	type Props = Pick<RetailFormState, 'bundles'> & Pick<HTMLFieldsetAttributes, 'class'>;
-	let { bundles = $bindable(), class: extraClass }: Props = $props();
+	type Props = Pick<RetailFormState, 'bundles'>;
+	let { bundles = $bindable() }: Props = $props();
 
 	function addBundle() {
 		bundles.push({
@@ -23,7 +21,7 @@
 	}
 </script>
 
-<FieldSet class=" {extraClass}" title="Bundle Options">
+<FieldSet title="Bundle Options">
 	<table class="w-full table-auto">
 		<thead>
 			<tr class="text-left align-text-top uppercase">
@@ -48,7 +46,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							aria-labelledby="bundle-name"
-							class="input"
+							class="input w-[16ch]"
 							id="bundle-{bundle.key}-name"
 							type="text"
 							bind:value={bundle.name}
@@ -94,7 +92,7 @@
 					>
 					<td class="py-1.5">
 						<button
-							class="btn btn-ghost"
+							class="btn btn-ghost btn-sm"
 							title="Delete bundle #{index + 1} ({bundle.name})"
 							onclick={() => removeBundle(index)}
 						>
