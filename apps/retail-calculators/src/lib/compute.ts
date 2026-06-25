@@ -39,7 +39,7 @@ export function computeRetailResults({
 }: ComputeRetailResultsOptions): ComputeGroupedResultsOutput | null {
 	const columns: ResultsColumn[] = [
 		{ id: 'scenario-name', label: 'Scenario Name' },
-		{ id: 'bundle-name', label: 'RetailBundle Name' },
+		{ id: 'bundle-name', label: 'Bundle Name' },
 		{ id: 'listing', label: 'Listing Price' },
 		{
 			id: 'fees',
