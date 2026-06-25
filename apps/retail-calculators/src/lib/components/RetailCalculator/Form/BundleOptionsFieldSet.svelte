@@ -21,7 +21,7 @@
 	}
 </script>
 
-<FieldSet title="Bundle Options">
+<FieldSet title="Bundles">
 	<table class="w-full table-auto">
 		<thead>
 			<tr class="text-left align-text-top uppercase">
