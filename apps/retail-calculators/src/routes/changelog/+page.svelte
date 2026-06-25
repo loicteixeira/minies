@@ -12,6 +12,16 @@
 <div class="mx-auto mb-8 max-w-[65ch] px-4 sm:px-6 lg:px-8">
 	<div class="prose mb-8"><h2>Changelog</h2></div>
 	<Changelog>
+		<ChangelogEntry date="2026-06-25">
+			<ChangelogChange tag="improvement"
+				>Explicit "no rounding" option instead of blank</ChangelogChange
+			>
+			<ChangelogChange tag="fix"
+				>Shrank scenario, bundle and fee name inputs so all three blocks fix on the same line on
+				smaller screens</ChangelogChange
+			>
+			<ChangelogChange tag="fix">Fix cell colors on reverse calculators</ChangelogChange>
+		</ChangelogEntry>
 		<ChangelogEntry date="2026-01-16">
 			<ChangelogChange tag="feature">
 				Retail Calculators is now part of the <a
