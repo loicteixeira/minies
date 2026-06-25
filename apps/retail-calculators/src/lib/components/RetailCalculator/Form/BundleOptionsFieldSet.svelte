@@ -81,7 +81,7 @@
 							id="bundle-{bundle.key}-rounding"
 							bind:value={bundle.rounding}
 						>
-							<option value={null} aria-label="None"></option>
+							<option value={null} aria-label="None">None</option>
 							<option value={0.1}>0.1</option>
 							<option value={1}>1</option>
 							<option value={2}>2</option>
