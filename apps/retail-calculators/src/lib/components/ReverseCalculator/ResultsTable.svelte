@@ -19,10 +19,7 @@
 			<tr class="border-inherit">
 				{#each columns as column (column.id)}
 					<th
-						class={[
-							'border-inherit px-4 py-3 [&:not(:last-child)]:border-e',
-							!column.children && 'border-b ',
-						]}
+						class={['border-inherit px-4 py-3 not-last:border-e', !column.children && 'border-b ']}
 						colspan={column.children ? column.children.length : 1}
 						rowspan={column.children ? 1 : 2}
 					>
