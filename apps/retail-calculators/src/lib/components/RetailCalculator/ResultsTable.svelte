@@ -9,8 +9,6 @@
 	let columnIds = $derived(
 		columns.flatMap((column) => column.children?.map((child) => child.id) ?? column.id),
 	);
-
-	$inspect(columns);
 </script>
 
 <div class="overflow-x-auto rounded border">
