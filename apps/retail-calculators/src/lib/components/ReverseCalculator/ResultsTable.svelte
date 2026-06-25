@@ -46,7 +46,7 @@
 							{type}
 							{value}
 							{warning}
-							id={columnIds[cellIndex + 1]}
+							id={columnIds[cellIndex]}
 							{currencyCode}
 						/>
 					{/each}
